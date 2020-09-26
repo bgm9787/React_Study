@@ -48,6 +48,14 @@
         // 组件渲染
         ReactDOM.render(<App />, document.getElementById('app'))
 
+        // 补充this问题：onClick={this.changeMessage.bind(this)}
+        // 虽然this.changeMessage函数定义的位置是在类里面，但它的调用是在其内部发生点击时回调的
+        // 内部是如何调用的？
+        // changeMessage.apply(undefined)  因为在它内部拿不到我们外层的this
+
+        // 因此可以用bind/箭头函数、、指定this
+
+
     </script>
 </body>
 </html>
