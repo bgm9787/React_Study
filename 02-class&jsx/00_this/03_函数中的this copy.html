@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo() {
+            console.log(this)
+        }
+
+        foo() // 1. this->window
+
+        var obj = {
+            name: 'nameobj',
+            foo: foo
+        }
+
+        obj.foo() // 2. this-> obj
+
+        var obj2 = {
+            name: 'nameobj2'
+        }
+
+        foo.call(obj2) // 3. this-> obj2
+
+        var obj3 = {
+            name: 'nameobj3',
+            bar: obj
+        }
+
+        obj3.bar.foo() // 4. this-> obj
+
+        obj.foo.call(obj2)  // 5. this-> obj2
+
+        let a = new obj.foo() 
+        
+        
+    </script>
+</body>
+</html>

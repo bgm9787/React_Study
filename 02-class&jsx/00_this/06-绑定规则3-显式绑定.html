@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this的绑定和 调用方式以及调用的位置有关系
+        // 显式绑定：call apply bind 
+        function test() {
+            console.log(this)
+        }
+
+        let obj = {
+            name: 'bgm'
+        }
+
+        // 显式绑定：call apply bind 
+        // call: 要绑定的this, ...args
+        test.call(obj, 12,'23', 'rt')
+        test.call(window)
+        test.call(22)
+        test.call('string')
+
+        // apply 要绑定的this, args
+        test.apply(obj, [12,'23', 'rt'])
+        test.apply(window)
+        test.apply(22)
+        test.apply('string')
+
+        // bind  要绑定的this, ...args    (不是自执行)
+        test.bind(obj)
+        let aa = test.bind(obj)
+        aa()             // 不是默认绑定的独立调用函数，aa已经显式绑定了this为obj
+        aa()
+
+
+
+    </script>
+</body>
+</html>
