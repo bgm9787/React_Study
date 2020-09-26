@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">app</div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // let message = "hello react"
+
+        // function changeText() {
+        //     message="改变message"
+        // }
+
+        // // jsx特点：多个标签最外层只能有一个根标签
+        // ReactDOM.render(
+        //     <div>
+        //         <h2>{ message }</h2>
+        //         <button onClick={changeText}>切换内容</button>
+        //     </div>,
+        //     document.getElementById('app')
+        // ) 
+
+        // 以上代码 点击按钮 不会改变页面h2的内容，只有变量message发生了变化
+        // why:  render函数在一开始会执行一次（页面渲染一次），点击按钮后 没有重新执行render函数 
+
+        
+        let message = "hello react"
+
+        function changeText() {
+            message="改变message"
+            Render() // 需执行Render
+        }
+
+        function Render() {
+            ReactDOM.render(
+                <div>
+                    <h2>{ message }</h2>
+                    <button onClick={changeText}>切换内容</button>
+                </div>,
+                document.getElementById('app')
+            ) 
+        }
+
+        // 页面加载执行一次
+        Render()
+        
+
+    </script>
+</body>
+</html>

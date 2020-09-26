@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 添加react依赖，vue只需添加一个依赖库，react需添加三个 -->
+    <!-- 
+        react：     包含react所必须的核心代码
+        react-dom： react渲染在不同平台所需要的核心代码
+        bable：     将jsx转换成React代码的工具，将ES6转成大多数浏览器都支持的ES5的语法。
+                    jsx （用普通html方式进行开发）-----bable将jsx转为--=> react-renderElement(h1, ...args)  ===>可被react库使用并生成虚拟dom & 可执行在浏览器中   
+
+        三个库各司其职
+     -->
+
+    <div>Header</div>
+    <div id="app">app</div>
+    <div>Footer</div>
+
+
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <!-- react-dom.development.js文件 导出了一个对象：ReactDOM -->
+    <!--  type="text/babel"  script标签中的jsx能被解析 -->
+    <script type="text/babel">
+
+        // ReactDOM.render(要渲染的HTML内容, 挂载到哪个dom) 
+        // ReactDOM.render(<h2>Hello World</h2>, document.getElementById('app')) 
+
+        // {} 大括号语法
+        let message = "hello react"
+        ReactDOM.render(<h2>{ message }</h2>, document.getElementById('app')) 
+
+    </script>
+</body>
+</html>

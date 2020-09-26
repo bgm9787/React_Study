@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="text">Hello React</h2>
+    <button>html切换</button>
+</body>
+<script>
+    let changeText = 'Hello World!!'
+
+    let textDom = document.getElementsByClassName('text')[0]
+    let btmDom = document.getElementsByTagName('button')[0]
+
+    btmDom.addEventListener('click', (e) => {
+        textDom.innerHTML = changeText
+    })
+
+    // 以上为 命令式编程：每做一个操作，都是给计算机（浏览器）一个个指令
+</script>
+</html>

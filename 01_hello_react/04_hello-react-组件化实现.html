@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">app</div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <script type="text/babel">
+        // 如何定义组件？
+        // react文件中 index.js中 export一个对象，其中有Component
+
+        // 封装App组件
+        class App extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    message: 'hello'
+                }
+            }
+
+            // 所渲染的东西放到render()中 并返回  ** render()是由react框架来调用的 我们手动调用没有任何效果
+            render() {
+                // return () 看做一个整体
+                return (
+                    <div>
+                        <h2>{ this.state.message }</h2>
+                        <button onClick={this.changeMessage.bind(this)}>change</button>
+                    </div>
+                )
+            }
+            changeMessage() {
+                this.setState({
+                    message:'change message'
+                })
+            }
+        }
+
+
+        // 组件渲染
+        ReactDOM.render(<App />, document.getElementById('app'))
+
+    </script>
+</body>
+</html>
