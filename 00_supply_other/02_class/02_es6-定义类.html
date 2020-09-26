@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // react 是不建议使用es5中定义类的方式，推荐es6创建类
+
+        // 1. 创建类
+        class Person {
+            // 3. 所有的类都可以实现constructor构造方法，在通过new创建实例对象时就会执行此方法
+            //    并会将创建对象里的参数传递到constructor方法内，
+            //    在创建类的对象时，会创建(构造))一个新对象，
+            //    constructor内 有一个当前类创建出来的对象 其内的this就指向创建的对象p
+            constructor(name, age ) {
+                this.name = name
+                this.age = age
+            }
+
+            // es6 class中定义方法 ==》 同es5中将方法挂在prototype上
+            eat() {
+                console.log(this.name, this.age, 'eat')
+            }
+        }
+
+        // 2. 创建/声明对象
+        let p = new Person('bgm', 11)  
+        p.eat()
+
+    
+    </script>
+</body>
+</html>

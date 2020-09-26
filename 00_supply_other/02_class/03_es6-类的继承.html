@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age 
+            }
+
+            running() {
+                console.log(this.name, this.age, 'run---')
+            }
+        }
+
+        // extends 继承
+        class Student extends Person{
+            constructor(name, age, sno) {
+                // super 子类中是必须初始化父类对象
+                super(name, age)
+                this.sno = sno 
+            }
+        }
+
+        class Teacher extends Person {
+            constructor(name, age, title) {
+                super(name, age)                
+                this.title = title 
+            }
+
+            running() {
+                console.log(this.name, this.age, 'run---')
+            }
+        }
+
+        let p = new Person('per', 11)
+        console.log(p.name, p.age)
+        p.running()
+
+        let stu = new Student('stu', 12, 111)
+        console.log(stu.name, stu.age)
+        stu.running()
+        
+        let tea = new Teacher('per', 33, 'professor')
+        console.log(tea.name, tea.age)
+        tea.running()
+
+
+
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name
+        //         this.age = age 
+        //     }
+
+        //     running() {
+        //         console.log(this.name, this.age, 'run---')
+        //     }
+        // }
+
+        // class Student {
+        //     constructor(name, age, sno) {
+        //         this.name = name
+        //         this.age = age 
+        //         this.sno = sno 
+        //     }
+
+        //     running() {
+        //         console.log(this.name, this.age, 'run---')
+        //     }
+        // }
+
+        // class Teacher {
+        //     constructor(name, age, title) {
+        //         this.name = name
+        //         this.age = age 
+        //         this.title = title 
+        //     }
+
+        //     running() {
+        //         console.log(this.name, this.age, 'run---')
+        //     }
+        // }
+
+        // let p = new Person('per', 11)
+        // console.log(p.name, p.age)
+        // p.running()
+
+        // let stu = new Student('stu', 12, 111)
+        // console.log(stu.name, stu.age)
+        // stu.running()
+        
+        // let tea = new Teacher('per', 33, 'professor')
+        // console.log(tea.name, tea.age)
+        // tea.running()
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // es5定义类
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+            // 一般不会写在这里 而是定义在原型prototype
+            this.run = function() {console.log('sdf',this.name)}
+        }
+
+        Person.prototype.eat = function() {
+            console.log(this.name, this.age, 'eat')
+        }
+
+        let per = new Person('bgm', 11) 
+        console.log(per)
+        console.log(per.run)
+        console.log(per.eat)
+        per.run()
+        per.eat()
+                                // new 作了什么？
+                                // 1.创建一个全新的对象；
+                                // 2.这个对象会被执行Prototype连接；
+                                // 3.这个新对象会绑定到函数调用的this上（this的绑定在这个步骤完成）；
+                                // 4.如果函数没有返回其他对象，表达式会返回这个新对象
+    </script>
+</body>
+</html>
