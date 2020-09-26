@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this的绑定和 调用方式以及调用的位置有关系
+
+        // 默认绑定：独立函数调用
+
+        // eg1
+        function foo () {
+            console.log(this)
+        }
+        foo() //没有和某个对象联系， 独立函数调用 ， window
+
+        // -------------------------------------------------
+
+        // eg2
+        function foo1() {
+            foo2()              // 独立函数调用
+            console.log(this)
+        }
+        function foo2() {
+            foo3()              // 独立函数调用
+            console.log(this)
+        }
+        function foo3() {
+            console.log(this)
+        }
+
+        foo1()                  // 独立函数调用 window
+
+        // -------------------------------------------------
+
+        // eg3.1
+        // 函数作为另一个函数的参数
+        function test() {
+            console.log(this)
+        }
+        function test1(aa) {
+            aa()              // 独立函数调用
+        }
+
+        test1(test)           // 独立函数调用 window
+
+        // eg3.2
+        var obj = {
+            name: 'bgm',
+            test
+        }
+
+        test1(obj.test)       // 独立函数调用 window
+
+
+    </script>
+</body>
+</html>
