@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">app</div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+    // 案例：isLogin=true:  展示 欢迎回来~
+    //      isLogin=false: 展示 请先登录~
+    //      有按钮 可切换
+        class App extends React.Component {
+            constructor(props) {
+                super(props)
+
+                this.state = {
+                    isLogin: false,
+                    isLogin1: false
+                }
+            }
+
+            render() {
+                // 方法一： if/else 判断  适用于处理的逻辑较多时
+                let text = ''
+                let btnText = ''
+                if(this.state.isLogin) {
+                    text = '欢迎回来~'
+                    btnText = '退出'
+                } else {
+                    text = '请先登录~'
+                    btnText = '登录'
+                }
+                return (
+                    <div>
+                        <p>{ text }</p>
+                        <button onClick={() => {this.changeStatus()}}>{ btnText }</button>
+
+                        {/* 方法二： 三目运算符 */}
+                        <p>{this.state.isLogin1 ? '欢迎回来~' : '请先登录~'}</p>
+                        <button onClick={() => {this.changeStatus1()}}>{this.state.isLogin1 ? '退出' : '登录'}</button>
+
+                        {/* 方法三： 逻辑与&& */}
+                        {/* 逻辑与: 一个条件不成立, 后面的条件都不会进行判断了 */}
+                        <p>{this.state.isLogin1 ? 'JEREMY' : ''}</p>
+                        <p>{this.state.isLogin1 && 'JEREMY'}</p>
+                    </div>
+                )
+            }
+            changeStatus() {
+                this.setState({ isLogin: !this.state.isLogin })
+            }
+            changeStatus1() {
+                this.setState({ isLogin1: !this.state.isLogin1 })
+            }
+        }
+
+        ReactDOM.render(<App/>, document.getElementById("app"));
+    </script>
+</body>
+</html>
