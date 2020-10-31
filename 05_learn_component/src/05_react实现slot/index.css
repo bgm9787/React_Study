@@ -1,0 +1,18 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.navBar {
+    display: flex;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+}
+.navLeft, .navRight {
+    width: 100px;
+    background-color: #9cdf90;
+}
+
+.navCenter {
+    flex: 1;
+}

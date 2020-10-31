@@ -1,0 +1,17 @@
+.tabHeader {
+    height: 44px;
+    line-height: 44px;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.tabItem {
+    height: 100%;
+    width: 33%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.avtiveItem {
+    border-bottom: 2px solid #f00;
+}
