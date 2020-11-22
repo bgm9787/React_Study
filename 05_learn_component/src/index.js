@@ -14,7 +14,14 @@ import ReactDOM from 'react-dom';
 
 // import App from './06_跨组件通信/01_props传递';
 // import App from './06_跨组件通信/02_context传递_类组件';
-import App from './06_跨组件通信/03_context传递_函数组件';
+// import App from './06_跨组件通信/03_context传递_函数组件';
+
+
+// import App from './08_React性能优化/01_列表中keys的作用';
+// import App from './08_React性能优化/02_组件嵌套的render调用';
+// import App from './08_React性能优化/03_shouldComponentUpdate基本使用';
+// import App from './08_React性能优化/04_PureComponent';
+import App from './08_React性能优化/05_memo_函数组件的性能优化';
 
 ReactDOM.render( <App />, document.getElementById('root') );
 
