@@ -27,7 +27,10 @@ import ReactDOM from 'react-dom';
 
 // import App from './09_全局事件传递events/01_全局事件传递';
 
-import App from './10_受控和非受控组件/01_refs的使用';
+// import App from './10_refs&受控和非受控组件/01_refs的使用';
+// import App from './10_refs&受控和非受控组件/02_受控组件input';
+// import App from './10_refs&受控和非受控组件/03_受控组件select';
+import App from './10_refs&受控和非受控组件/04_受控组件-多输入';
 
 ReactDOM.render( <App />, document.getElementById('root') );
 
