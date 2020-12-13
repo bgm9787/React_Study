@@ -6,11 +6,10 @@ class Home extends PureComponent {
   }
 }
 
-function Profile(props) {
-
-  // 这种做法是错误的，拿不到ref属性
-  // return <p ref={props.ref}>Profile</p>
-}
+// function Profile(props) {
+//   // 这种做法是错误的，拿不到ref属性
+//   return <p ref={props.ref}>Profile</p>
+// }
 
 // 高阶组件forwardRef
 const Profile = forwardRef(function(props, ref) {
